@@ -64,7 +64,7 @@ kubectl apply -f mysql-statefulset.yaml
 kubectl get sts
 
 kubectl get po
-查看mysqlpod有没有运行起来，如下所示表示是运行正常的，一主两从的mysql集群
+查看mysql pod有没有运行起来
 
 kubectl get po
 
