@@ -58,6 +58,7 @@ kubectl apply -f mysql-services.yaml
 kubectl get svc
 
 7、创建mysql-statefulset
+yaml文件中的两个基础镜像需要提前准备，环境演示的时候会导出为tar包。
 kubectl apply -f mysql-statefulset.yaml
 
 kubectl get sts
@@ -66,6 +67,8 @@ kubectl get po
 查看mysqlpod有没有运行起来，如下所示表示是运行正常的，一主两从的mysql集群
 
 kubectl get po
+
+
 NAME      READY   STATUS    RESTARTS   AGE
 mysql-0   2/2     Running   0          4h17m
 mysql-1   2/2     Running   1          4h16m
