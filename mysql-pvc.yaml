@@ -1,0 +1,42 @@
+---
+kind: PersistentVolumeClaim
+apiVersion: v1
+metadata:
+  name: data-mysql-0
+  annotations:
+    volume.beta.kubernetes.io/storage-class: "nfs-client-provisioner" 
+spec:
+  accessModes:
+    - ReadWriteMany
+  resources:
+    requests:
+      storage: 500Mi
+
+
+---
+kind: PersistentVolumeClaim
+apiVersion: v1
+metadata:
+  name: data-mysql-1
+  annotations:
+    volume.beta.kubernetes.io/storage-class: "nfs-client-provisioner"
+spec:
+  accessModes:
+    - ReadWriteMany
+  resources:
+    requests:
+      storage: 500Mi
+
+---
+kind: PersistentVolumeClaim
+apiVersion: v1
+metadata:
+  name: data-mysql-2
+  annotations:
+    volume.beta.kubernetes.io/storage-class: "nfs-client-provisioner"
+spec:
+  accessModes:
+    - ReadWriteMany
+  resources:
+    requests:
+      storage: 500Mi
