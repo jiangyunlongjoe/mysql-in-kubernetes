@@ -68,9 +68,9 @@ kubectl get po
 
 kubectl get po
 
+如果是3个pod都running,ready的状态，就表示集群创建成功了。
 
-NAME      READY   STATUS    RESTARTS   AGE
-mysql-0   2/2     Running   0          4h17m
-mysql-1   2/2     Running   1          4h16m
-mysql-2   2/2     Running   1          4h16m
+
+
+
 
