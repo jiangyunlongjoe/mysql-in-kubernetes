@@ -2,6 +2,7 @@
 
 
 1、安装NFS
+--------
 
 yum -y install rpcbind nfs-utils #安装rpc跟nfs服务
 
@@ -27,6 +28,7 @@ mount  -t nfs 10.1.2.20:/nfs /mnt #将服务nfs目录挂载至本机/mnt
 df -h  #查看挂载结果
 
 2、部署storageclass
+--------
 编辑storageclass.yaml,确定provisioner的值
 
 kubectl apply -f storageclass.yaml
@@ -35,6 +37,7 @@ kubectl get storageclass
 
 
 3、部署nfs-client-provisioner
+--------
 
 编辑nfs-client-provisioner.yaml,修改NFS服务器所在ip，共享存储目录，根据自己的名称来修改，与 storageclass.yaml 中的 provisioner 名字一致
 
@@ -43,21 +46,25 @@ kubect apply -f nfs-client-provisioner.yaml
 kubectl get po -n kube-system
 
 4、创建用于Mysql数据持久化的pvc
+--------
 kubectl apply -f mysql-pvc.yaml
 
 kubectl get pv,pvc
 
 5、创建configmap
+--------
 kubectl apply -f  mysql-configmap.yaml
 
 kubectl get cm
 
 6、创建service
+--------
 kubectl apply -f mysql-services.yaml
 
 kubectl get svc
 
 7、创建mysql-statefulset
+--------
 yaml文件中的两个基础镜像需要提前准备，环境演示的时候会导出为tar包。
 kubectl apply -f mysql-statefulset.yaml
 
